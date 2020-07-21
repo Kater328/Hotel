@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>hotel</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                     
+    <link rel="stylesheet" href="css/magnific-popup.css">                               
+    <link rel="stylesheet" href="css/templatemo-style.css">                                
+
+</head>
+    <body>   
+<?
+$link = mysqli_connect('localhost', 'root', '', 'index1base');
+if (mysqli_connect_errno()) {
+    printf("Не удалось подключиться: %s\n", mysqli_connect_error());
+    exit();
+}
+mysqli_set_charset($link, "utf8");
+
+if( isset ($_POST['contact_btn']) ) {
+$query = "INSERT INTO bron (`name`,`phone`,`email`) VALUES ('".$_POST['contact_name']."', '".$_POST['contact_phone']."', '".$_POST['contact_email']."')";
+$result = mysqli_query($link, $query);
+}
+?>     
+        <div class="container">
+            <div class="row">
+                <div class="tm-left-right-container">
+                    <!-- Left column: logo and menu -->
+                    <div class="tm-blue-bg tm-left-column">                        
+                        <div class="tm-logo-div text-xs-center"><center>
+                            <img src="img/logo.png" alt="Logo" height="130pt">
+                            <h1 class="tm-site-name">Космос</h1></center>
+                        </div>
+                        <nav class="tm-main-nav">
+                            <ul class="tm-main-nav-ul">
+                                <li class="tm-nav-item">
+                                    <a href="#welcome" class="tm-nav-item-link">О гостинице</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#about" class="tm-nav-item-link">История</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#galleryone" class="tm-nav-item-link">Номера</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#secondgallery" class="tm-nav-item-link">Правила проживания</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#thirdgallery" class="tm-nav-item-link">Услуги</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#contact" class="tm-nav-item-link">Бронирование</a>
+                                </li>
+                            </ul>
+                        </nav>                                         
+                    </div> <!-- Left column: logo and menu -->
+                    <!-- Right column: content -->
+                    <div class="tm-right-column">
+                        <figure>
+                            <img src="img/neaty-00.jpg" alt="Header image" class="img-fluid" width="100%">    
+                        </figure>
+
+                        <div class="tm-content-div">
+                            <!-- Welcome section -->
+                            <section id="welcome" class="tm-section">
+                                <header>
+                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">О гостинице</h2>
+                                </header>
+                                <p>Гостиница «Космос» — своеобразное лицо города Одессы. У нас останавливаются влиятельные политики, дипломаты, известные актеры, выдающиеся художники и спортсмены. Возвращаться в нашу гостиницу – хорошая традиция, потому что здесь всегда ждут и с радостью встречают гостей. К нам легко добраться из любой точки города, а если вы захотите познакомиться со столицей поближе или же запланировали деловую встречу, все удобные для Вас виды транспорта сосредоточены именно здесь.</p>
+                            </section>
+                            <!-- About section -->
+                            <section id="about" class="tm-section">
+                                <div class="row">                                                                
+                                    <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 push-lg-4 push-md-5">
+                                        <header>
+                                            <h2 class="tm-blue-text tm-section-title tm-margin-b-45">История</h2>
+                                        </header>
+                                        <p>1826—28 гг. по проекту архитектора Ф. К. Боффо на Бульварной улице № 11 в стиле раннего итальянского ренессанса был возведён особняк, в котором с апреля 1846-го года открылась гостиница «Космос».</p>
+                                        <p>Основателем и первым владельцем отеля стал Жан-Батист Карута, знаменитый французский кондитер и гастроном. В виду того, что все французские «патриотические» названия к тому моменту уже были «разобраны» другими отелями, Карута обратил свой взор к Туманному Альбиону и назвал свою гостиницу «Космос».</p>
+                                        <p>После капитальной перестройки «Космос» в 1899—1900 гг. по проекту архитектора Ю. М. Дмитренко гостиница приобрела свой облик, знакомый одесситам и гостям города в XX и XXI веках. В 1988 году была завершена очередная реставрация.<p>
+                                        <a href="history.html" class="tm-button tm-button-wide">Доп. инф.</a>  
+                                    </div>
+
+                                </div>                            
+                            </section>  
+
+
+                            <!-- Обычные -->     
+                            <section id="galleryone" class="tm-section">
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Обычные номера</h2></header>
+                                <div class="tm-gallery-container tm-gallery-1">
+                                    <div class="tm-img-container tm-img-container-1">
+                                        <a href="img/neaty-01.jpg"><img src="img/neaty-01.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-1">
+                                        <a href="img/neaty-02.jpg"><img src="img/neaty-02.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-1">
+                                        <a href="img/neaty-03.jpg"><img src="img/neaty-03.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-1">
+                                        <a href="img/neaty-04.jpg"><img src="img/neaty-04.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-1">
+                                        <a href="img/neaty-05.jpg"><img src="img/neaty-05.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>
+                                                                 
+                                </div>
+                                <h3>Описанние номера:</h3>Комфортный номер площадью 16-18 кв.м. Номер с видом на море.
+                                
+                            </section>            <hr>
+
+
+                            <!-- люкс -->     
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Люкс номера</h2></header>
+                                <div class="tm-gallery-container tm-gallery-2">
+                                <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/neaty-06.jpg"><img src="img/neaty-06.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>
+                                <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/neaty-07.jpg"><img src="img/neaty-07.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/neaty-08.jpg"><img src="img/neaty-08.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/neaty-09.jpg"><img src="img/neaty-09.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/neaty-10.jpg"><img src="img/neaty-10.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>                                    
+                                </div>
+                                <h3>Описанние номера:</h3>  Комфортабельный номер однокомнатный номер с видом на море площадью 18-22 кв.м. Номера расположены на 2 и 3 этажах. 
+                            </section>        <hr>
+
+
+                            <!-- вип -->     
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">VIP номера</h2></header>
+                                <div class="tm-gallery-container tm-gallery-3">
+                                    <div class="tm-img-container tm-img-container-3">
+                                        <a href="img/neaty-11.jpg"><img src="img/neaty-11.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>    
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-3">
+                                        <a href="img/neaty-12.jpg"><img src="img/neaty-12.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-3">
+                                        <a href="img/neaty-13.jpg"><img src="img/neaty-13.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-3">
+                                        <a href="img/neaty-14.jpg"><img src="img/neaty-14.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>
+                                    </div>  
+                                    <div class="tm-img-container tm-img-container-3">
+                                        <a href="img/neaty-15.jpg"><img src="img/neaty-14.jpg" alt="Image" class="img-fluid tm-img-tn" height="200pt"></a>
+                                    </div>                                
+                                </div>
+                                <h3>Описанние номера:</h3>   Просторный номер с шикарным панорамным видом из окна. Комната обустроена большой кроватью, диваном, креслом и журнальным столиком. 
+                                       <br>
+                            </section>  
+                            <hr>
+
+
+                                        <!-- Правила -->     
+                            <section id="secondgallery" class="tm-section">
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Правила</h2></header>
+                                <p>Расчеты на территории Украины проводятся исключительно в национальной валюте по курсу Национального банка Украины относительно иностранных валют на день оплаты.
+
+При размещении детей в возрасте до 5 лет (включительно) с родителями в одном номере без предоставления места, плата за проживание детей не взимается.
+
+Номера гостиницы одного типа могут незначительно отличаться интерьером.
+
+Стоимость номера включает: завтрак, доступ к сети Интернет (WiFi), телевещание, косметический набор.
+
+Оплачивается дополнительно: страховой взнос за одного гражданина в размере 20 (двадцать) гривен за каждые сутки проживания и туристический сбор в размере 1% от стоимости проживания, который взимается отдельно в случаях, предусмотренных Налоговым кодексом Украины и решением Киевского городского совета от 30.12.2010 г.
+
+Гостиница принимает к оплате наличные деньги, кредитные карты.</p>
+<ul>
+<li>Время регистрации и заселения в отель начинается с 14:00 текущего дня по местному времени.</li>
+<li>Время выезда гостей и расчётный час - 12:00 текущего дня по местному времени.         </li>
+<li>Заселение до 14:00 является дополнительной платной услугой и предоставляется при наличии свободного номерного фонда.    </li>
+<li>За ранний заезд с 06:00 до 14:00 оплата производится в размере 50% от стоимости номера за одни расчетные сутки, при наличии свободных номеров в день заезда.   </li>
+<li>За проживание в гостинице меньше суток, оплата производится за полные расчётные сутки.                                                  </li>
+<li>Выезд после 12:00 является дополнительной услугой, предоставляемой при наличии свободных номеров и оплачивается в размере 50% стоимости суток проживания (предоставление услуг) только до 20:00, выезд после 20:00 оплачивается как за одни расчетные сутки. </li>   </ul>
+                            
+                                                                               <hr>
+                                <section id="thirdgallery" class="tm-section">
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Услуги</h2></header>
+                                  Гостиница «Космос» предлагает безупречный круглосуточный сервис и профессиональное обслуживание.  <br><p> К услугам Гостей:  </p>  
+                                  <ul>
+                                  <li><h1>Wi-fi</h1></li>
+                                  <div class="col-lg-4 col-md-5 col-sm-12 col-xs+12 pull-lg+20 pull-md+7 tm-about-img-container">
+                                  <img src="img/usl-1.jpg" alt="Image" class="img-fluid" height="250pt">      </div>
+                                  
+                                   <p>На всей территории гостиницы предоставляется бесплатный доступ к сети Wi-Fi скоростью до 2 Мбит/с. Каждый Гость может легко и быстро подключить свой гаджет, а скорость работы Wi-Fi обеспечит беспрерывный доступ в Интернет.</p> <br><br><br>      
+                                   
+                                   <li><h1>Салон красоты</h1></li>
+                                  <div class="col-lg-4 col-md-5 col-sm-12 col-xs+12 pull-lg+20 pull-md+7 tm-about-img-container">
+                                  <img src="img/usl-2.jpg" alt="Image" class="img-fluid" height="250pt">      </div>
+                                  
+                                   <p>У нас работают мастера с большим опытом и огромным желанием сделать Вас красивее и подарить хорошее настроение, наши цены лучшие в соотношении цена услуги – уровень и качество обслуживания.</p> <br><br><br>   
+                                               
+                                  <li><h1>Парковка</h1></li>
+                                  <div class="col-lg-4 col-md-5 col-sm-12 col-xs+12 pull-lg+20 pull-md+7 tm-about-img-container">
+                                  <img src="img/usl-3.jpg" alt="Image" class="img-fluid" height="250pt">      </div>
+                                  
+                                   <p>Рядом с гостиницей расположена открытая круглосуточно охраняемая парковка на 69 мест. Парковка  предоставляется для Гостей, которые проживают в гостинице или же посещают ее мероприятия, рестораны.</p> <br><br><br> 
+                                   
+                                   <li><h1>Камера хранения</h1></li>
+                                  <div class="col-lg-4 col-md-5 col-sm-12 col-xs+12 pull-lg+20 pull-md+7 tm-about-img-container">
+                                  <img src="img/usl-4.jpg" alt="Image" class="img-fluid" height="250pt">      </div>
+                                  
+                                   <p>Для удобства и безопасности наших Гостей все ценные вещи, а также Ваш багаж, можно оставить в камере хранения гостиницы, которая расположена в холле 1-го этажа.</p> <br><br><br>  
+                                   
+                                   <li><h1>Гардероб</h1></li>
+                                  <div class="col-lg-4 col-md-5 col-sm-12 col-xs+12 pull-lg+20 pull-md+7 tm-about-img-container">
+                                  <img src="img/usl-5.jpg" alt="Image" class="img-fluid" height="250pt">      </div>
+                                  
+                                   <p>При посещении гостиницы «Украина» или ресторана, Вы можете оставить свою верхнюю одежду в гардеробной комнате, которая расположена в холле  1-го этажа. Время работы с 8:00 до 20:00.</p> <br><br><br> 
+                                   
+                                   <li><h1>Трансфер</h1></li>
+                                  <div class="col-lg-4 col-md-5 col-sm-12 col-xs+12 pull-lg+20 pull-md+7 tm-about-img-container">
+                                  <img src="img/usl-6.jpg" alt="Image" class="img-fluid" height="250pt">      </div>
+                                  
+                                   <p>Предлагаем воспользоваться услугами трансфера: комфортная, своевременная встреча Гостей и доставка к месту назначения.</p> <br><br><br>        
+                                   
+                                   <li><h1>Прачечная</h1></li>
+                                  <div class="col-lg-4 col-md-5 col-sm-12 col-xs+12 pull-lg+20 pull-md+7 tm-about-img-container">
+                                  <img src="img/usl-7.jpg" alt="Image" class="img-fluid" height="250pt">      </div>
+                                  
+                                   <p>Неизменно высокий уровень сервиса, современные экологические технологии и постоянный контроль качества. Идеальное соотношение показателей «цена» и «качество». Ежедневно – с 08:00 до 20:00.</p> <br><br><br>     
+                            
+                                   <li><h1>Банкомат</h1></li>
+                                  <div class="col-lg-4 col-md-5 col-sm-12 col-xs+12 pull-lg+20 pull-md+7 tm-about-img-container">
+                                  <img src="img/usl-8.jpg" alt="Image" class="img-fluid" height="250pt">      </div>
+                                  
+                                   <p>В холле отеля воспользуйтесь услугами банкомата, где Вы сможете снять необходимые средства с карты. Данная услуга предоставляет возможность исключить необходимость посещения банков, что значительно сэкономит время.</p> <br><br><br>   
+                                   
+                                   
+                            <!-- Contact Us section -->     
+                            <section id="contact" class="tm-section">
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Бронирование</h2></header>
+                                <span id="doc_time">
+                                   Дата и время
+                                         </span>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <form action="#contact" method="post" class="contact-form">
+                                            <div class="form-group">
+                                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Имя"  required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="tel" id="contact_phone" name="contact_phone" class="form-control" placeholder="Телефон"> <!-- pattern="\+3\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required/> -->
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Почта"  required/>
+                                            </div>
+                                                                                
+                                            <button type="submit" class="float-right tm-button" name="contact_btn" onclick=”privet()”>Отправить</button>
+                                        </form>    
+                                    </div>
+                                    
+                                    <div class="col-lg-6 tm-contact-right">
+                                        <p>
+                                        Укажите свои данные и мы свяжимся с вами.    
+                                        </p>
+                                        <address>
+                                            Дерибасовская / 10<br>
+                                           <br>
+                                        </address>
+                                    </div>
+                                </div>
+                                
+                                               <script type="text/javascript">
+
+function clock() {
+var d = new Date();
+var month_num = d.getMonth()
+var day = d.getDate();
+var hours = d.getHours();
+var minutes = d.getMinutes();
+var seconds = d.getSeconds();
+
+month=new Array("января", "февраля", "марта", "апреля", "мая", "июня",
+"июля", "августа", "сентября", "октября", "ноября", "декабря");
+
+if (day <= 9) day = "0" + day;
+if (hours <= 9) hours = "0" + hours;
+if (minutes <= 9) minutes = "0" + minutes;
+if (seconds <= 9) seconds = "0" + seconds;
+
+date_time = "Сегодня - " + day + " " + month[month_num] + " " + d.getFullYear() +
+" г.&nbsp;&nbsp;&nbsp;Текущее время - "+ hours + ":" + minutes + ":" + seconds;
+if (document.layers) {
+ document.layers.doc_time.document.write(date_time);
+ document.layers.doc_time.document.close();
+}
+else document.getElementById("doc_time").innerHTML = date_time;
+ setTimeout("clock()", 1000);
+}
+
+
+function Raschet(){
+    var nochy = document.getElementsById("nochy").value;
+    var dlina = document.getElementsByName('contact_r');
+    for(var i=0; i<dlina.length; i++){
+    if(i == 0 && dlina[i].checked) var a = nochy * 800;
+    if(i == 1 && dlina[i].checked) var a = nochy * 1100;
+    if(i == 2 && dlina[i].checked) var a = nochy * 1600;
+    }                                          
+    alert ('За ' + nochy + ' дн. вам необходимо заплатить ' + a + ' грн.'); 
+}
+
+
+function ptivet()
+    alert ('Добро пожаловать,  ' + document.getElementsById(contact_name) + '. Мы приняли ваш запрос. Ожидайте звонка в ближайшее время.'); 
+}
+</script>
+
+
+              <!-- Расчёт -->     
+                                <section id="secondgallery" class="tm-section">
+                                <hr>
+                                <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Расчёт</h2></header>
+                                <p>Введите кол-во дней</p>
+                                 <div class="row">
+                                    <div class="col-lg-6">
+                                        <form action="#contact" method="post" class="contact-form">
+                                            <div class="form-group">
+                                                <input type="number" size="30" name="contact_num" min="1" max = "30" id="nochy" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <br><input type="radio" id = "r1" name="contact_r" value="r1" required/>  Обычный номер 
+                                                <br><input type="radio" id = "r2" name="contact_r" value="r2" required/>  Люкс номер 
+                                                <br><input type="radio" id = "r3" name="contact_r" value="r3" required/>  VIP номер 
+                                            </div>
+                                            <button type="submit" class="float-right tm-button" onClick = "Raschet()">Рассчитать</button>
+                                             
+                                   </form>    
+                                </div>
+                                                          
+                            </section>
+                            <marquee behavior="alternate" direction="left" bgcolor="#ffcc00">    Контакты +380665037437       </marquee>            
+                    </div> <!-- Right column: content -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+                
+        <!-- load JS files -->
+        <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+        <script src="js/jquery.magnific-popup.min.js"></script>     <!-- Magnific pop-up (http://dimsemenov.com/plugins/magnific-popup/) -->
+        <script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+        <script>     
+       
+            $(document).ready(function(){
+
+                // Single page nav
+                $('.tm-main-nav').singlePageNav({
+                    'currentClass' : "active",
+                    offset : 20
+                });
+
+                // Magnific pop up
+                $('.tm-gallery-1').magnificPopup({
+                  delegate: 'a', // child items selector, by clicking on it popup will open
+                  type: 'image',
+                  gallery: {enabled:true}
+                  // other options
+                }); 
+
+                $('.tm-gallery-2').magnificPopup({
+                  delegate: 'a', // child items selector, by clicking on it popup will open
+                  type: 'image',
+                  gallery: {enabled:true}
+                  // other options
+                }); 
+
+                $('.tm-gallery-3').magnificPopup({
+                  delegate: 'a', // child items selector, by clicking on it popup will open
+                  type: 'image',
+                  gallery: {enabled:true}
+                  // other options
+                }); 
+
+                $('.tm-current-year').text(new Date().getFullYear());                
+            });
+        </script>             
+</body>
+</html>
